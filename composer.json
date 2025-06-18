@@ -1,0 +1,23 @@
+{
+    "name": "melina/immobilien",
+    "description": "Immobilien with POO",
+    "type": "project",
+    "authors": [
+        {
+            "name": "meli1007",
+            "email": "melina100799@gmail.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^3.11",
+        "phpmailer/phpmailer": "^6.10",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Model\\" : "./models",
+            "MVC\\" : "./includes",
+            "Controllers\\" : "./controllers"
+        }
+    }
+}

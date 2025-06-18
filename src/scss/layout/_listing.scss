@@ -1,0 +1,53 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use 'sass:color';
+
+@include m.tablet {
+    .container-published {
+        @include m.grid(3, 2rem);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;   
+    }
+}
+
+.published {
+    background-color: color.adjust(v.$grey, $lightness: 5%);
+    border: 1px solid v.$grey;
+    margin-bottom: 2rem;
+
+    .content-published {
+        padding: 2rem;
+        h3, p {
+            margin: 0;
+            overflow-wrap: break-word;
+        }
+    }
+
+}
+
+.price {
+        color: v.$green;
+        font-weight: v.$bold;
+        font-size: 3rem;
+    }
+
+.icons-cat {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    max-width: 40rem;
+    li {
+        flex: 1;
+        display: flex;
+        svg { 
+            flex: 0 0 5rem;
+            margin-right: left;
+        }
+        
+        p {
+            font-weight: v.$black;
+        }
+        
+    }
+}

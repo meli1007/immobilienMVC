@@ -1,0 +1,33 @@
+# Node modules
+node_modules/
+
+# Composer dependencies
+vendor/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs y archivos temporales
+*.log
+*.cache
+*.tmp
+
+# Cypress
+cypress/videos/
+cypress/screenshots/
+cypress/results/
+
+# IDE 
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Otros archivos de lock que no quieras subir (opcional)
+package-lock.json
+composer.lock
+
+# Gulp archivos de salida, si aplica
+dist/
+build/

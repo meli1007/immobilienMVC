@@ -1,0 +1,51 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use 'sass:color';
+
+.dark-mode {
+    background-color: color.adjust(v.$greyDark, $lightness: -5%);
+
+    p{
+        color: v.$white;
+    }
+
+    a, h1, h2, h3, h4 {
+        color: v.$grey;
+    }
+
+    .published,
+    .listing-description {
+        background-color: v.$greyDark;
+        border: 1px solid v.$greyDark;
+
+        .price {
+            color: v.$green;
+        }
+    }
+
+    .icon-invert {
+        filter: invert(100%);
+    }
+    .text-about blockquote {
+        color: v.$white;
+    }
+
+    .form {
+        fieldset {
+            background-color: v.$greyDark;
+            
+        }
+        label,
+        legend,
+        p {
+            color: v.$grey;
+        }
+        input:not([type="submit"]),
+        textarea,
+        select {
+            background-color: v.$greyLight2;
+            border: 1px solid v.$greyDark;
+            color: v.$white;
+        }
+    }
+}

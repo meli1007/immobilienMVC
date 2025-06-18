@@ -1,0 +1,142 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.no-webp .start {
+    background-image: url('../img/header.jpg');
+}
+.webp .start {
+    background-image: url('../img/header.webp');
+}
+
+.header {
+    background-color: v.$greyDark;
+    padding: 1rem 0 3rem 0;
+
+    &.start {
+        background-position: center center;
+        background-size: cover;
+
+        @include m.tablet {
+            min-height: 70rem;
+        }
+
+        .content-header {
+            @include m.tablet {
+                min-height: 70rem;
+            }
+        }
+    }
+}
+
+.content-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h1 {
+        text-align: left;
+        color: v.$white;
+        font-weight: v.$bold;
+        line-height: 2;
+        max-width: 60rem;
+    }
+}
+
+.logo {
+    width: 15rem;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include m.tablet {
+        align-items: flex-end;
+    }
+
+    .dark-mode-button {
+        width: 3rem;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+
+        @include m.tablet {
+            margin-top: 0;
+        }
+    }
+}
+
+
+.bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+    
+
+    &:hover {
+        cursor: pointer;
+    }
+    
+    @include m.tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
+
+.navigation {
+    
+    /*display: none;*/
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    transition: visibility .3s ease-in-out, opacity 0.5s linear, height 0.5s linear;
+
+    @include m.tablet {
+        display: flex;
+        align-items: center;
+        opacity: 1;
+        visibility: visible;
+    }
+    a {
+        color: v.$white;
+        text-decoration: none;
+        font-size: 2.2rem;
+        display: block;
+        text-align: center;
+        
+        &:hover {
+            color: v.$green;
+        }
+        @include m.tablet {
+            margin-right: 2rem;
+            font-size: 1.8rem;
+
+            &:last-of-type {
+                margin: 0;
+            }
+        }
+    }
+}
+
+/* Hamburger Menu */
+.mobile-menu { 
+    width: 5rem;
+    @include m.tablet {
+        display: none;
+    }
+    
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    /*display: flex;
+    flex-direction: column;
+
+    @include m.tablet {
+        flex-direction: row;
+    }*/
+}
