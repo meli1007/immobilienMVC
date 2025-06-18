@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db               # apunta al servicio db (no localhost)
+      DB_PORT: 3306
+      DB_DATABASE: immobilien_crud
+      DB_USER: root
+      DB_PASSWORD: ''
+      
+      # Configuración Mailtrap
+      MAIL_MAILER: smtp         # corregido "smpt" a "smtp"
+      MAIL_HOST: sandbox.smtp.mailtrap.io
+      MAIL_PORT: 2525
+      MAIL_USERNAME: a7ad3a27375eca
+      MAIL_PASSWORD: e0af5fe8a688a8
+      MAIL_ENCRYPTION: PHPMailer::ENCRYPTION_SMTPS
+
+  db:
+    image: mariadb:10.6
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ''       # según DB_PASSWORD vacío
+      MYSQL_DATABASE: immobilien_crud
