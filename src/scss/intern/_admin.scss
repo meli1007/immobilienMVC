@@ -1,7 +1,7 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-
+ 
 .alert {
 
     padding: .5rem;
@@ -25,7 +25,7 @@ table.properties {
     margin-top: 4rem;
     width: 100%;
     border-spacing: 0;
-
+    
     thead {
         background-color: v.$green;
 
@@ -34,9 +34,85 @@ table.properties {
             padding: 2rem;
         }
     }
-
     .image-table {
         width: 10rem;
+    }
+    // mobile responsive
+    display: block;
+
+    thead {
+        display: none;
+    }
+
+    tbody {
+        display: block;
+    }
+
+    tr {
+        display: block;
+        margin-bottom: 1.5rem;
+        border: 1px solid v.$grey;
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        border: none;
+        border-bottom: 1px solid v.$grey;
+        position: relative;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        &::before {
+            display: inline-block;
+            font-weight: bold;
+            flex-basis: 40%;
+            color: v.$greyLight2;
+        }
+
+        &:nth-child(1)::before { content: "ID"; }
+        &:nth-child(2)::before { content: "Titel"; }
+        &:nth-child(3)::before { content: "Bild"; }
+        &:nth-child(4)::before { content: "Preis"; }
+        &:nth-child(5)::before { content: "Aktien"; }
+    }
+    
+    @include m.telefon {
+        display: table;
+
+        thead {
+            display: table-header-group;
+        }
+
+        tbody {
+            display: table-row-group;
+        }
+
+        tr {
+            display: table-row;
+            margin-bottom: 0;
+            border: none;
+            padding: 0;
+            border-radius: 0;
+        }
+
+        th, 
+        td {
+            display: table-cell;
+            border: none;
+            padding: 8px;
+            text-align: left;
+            
+        }
+        td::before {
+            content: none;
+            display: none;
+        }
     }
 }
 

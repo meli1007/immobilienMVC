@@ -31,3 +31,5 @@ composer.lock
 # Gulp archivos de salida, si aplica
 dist/
 build/
+
+docker-compose.yml
