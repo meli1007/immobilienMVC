@@ -12,4 +12,3 @@ Ideal for showcasing properties and efficiently managing the catalog.
 - Easy management of properties and content  
 - Responsive design for desktop and mobile
 
-
